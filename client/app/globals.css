@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@layer utilities{
+
+        .line-center-left {
+            background: linear-gradient(to right, transparent, gray);
+          }
+        
+          .line-center-right {
+            background: linear-gradient(to left, transparent, gray);
+          }
+    
+}
