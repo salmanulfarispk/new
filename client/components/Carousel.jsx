@@ -21,7 +21,7 @@ const carousel = () => {
 
     return (
         <>
-        <div className="w-full h-[300px] sm:h-[400px] md:h-[550px]">
+        <div className="w-full h-[450px] sm:h-[500px] md:h-[550px]">
             <Carousel slideInterval={5000}>
                 {CarouselImages.map((image) => (
                     <div key={image.id} className="relative w-full h-full">
@@ -70,7 +70,7 @@ const carousel = () => {
 
 
                   <>
-                  <ContentSlide imageid={image.id} imageheading={image.heading}/>         
+                  <ContentSlide imageid={image.id} imageheading={image.heading} imagetext={image.para}/>         
                   </>
              
                     </div>

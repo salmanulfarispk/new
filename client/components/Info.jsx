@@ -20,7 +20,7 @@ const Info = () => {
 
   return (
     <div className="fixed z-30">
-    <motion.div className="w-12 h-9 p-2 border border-slate-600 rounded-md bg-black/80 fixed top-[90px] md:top-[150px] -right-3 "
+    <motion.div className="w-12 h-9 p-2 border border-slate-600 rounded-md bg-black/80 fixed top-[140px] md:top-[150px] -right-3 "
        onClick={()=> setOpen(true)}
         variants={itemVariants}
         animate={open ? "closed" : "open"}

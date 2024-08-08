@@ -35,7 +35,7 @@ const NavbarSec = () => {
 
 
     return (
-        <motion.div className={`flex items-center text-white justify-between p-1 md:p-3 ${isScrolled ? 'bg-slate-100 shadow-sm' : 'bg-transparent'}`}
+        <motion.div className={`flex items-center text-white justify-between p-3 ${isScrolled ? 'bg-slate-100 shadow-sm' : 'bg-slate-100 md:bg-transparent'}`}
            transition={{duration: 0.3 }}
         >
             <div className="flex space-x-7">

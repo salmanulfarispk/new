@@ -53,7 +53,7 @@ const MainNavbar = () => {
         </div>          
     </div>
           
-          <div className="fixed top-[35px] z-40  w-full h-[35px] md:h-[45px]  ">
+          <div className="fixed top-[35px] z-40  w-full h-[45px]  ">
            <NavbarSec/>
          </div>
 
