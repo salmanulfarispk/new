@@ -1,6 +1,9 @@
-
 import { Carousel } from "flowbite-react"
 import Image from "next/image";
+import Info from "./Info";
+import ContentSlide from "./ContentSlide";
+
+
 
 
 
@@ -15,8 +18,10 @@ const carousel = () => {
         { id: 6, src: "/r5.png", alt: "Image 6", heading: "Luxurious Living Room", para: "Luxurious living rooms for ultimate comfort and stylish entertaining." },
     ];
 
+
     return (
-        <div className="h-[300px] sm:h-64 xl:h-80 2xl:h-[650px]">
+        <>
+        <div className="w-full h-[300px] sm:h-64 xl:h-80 2xl:h-[650px]">
             <Carousel slideInterval={5000}>
                 {CarouselImages.map((image) => (
                     <div key={image.id} className="relative w-full h-full">
@@ -25,6 +30,7 @@ const carousel = () => {
                             alt={image.alt}
                             layout="fill"
                             objectFit="cover"
+                            className="w-fit h-fit"
                         />
 
                         {image.id === 1 || image.id === 3 || image.id === 6 ? (
@@ -62,28 +68,28 @@ const carousel = () => {
 
                         )}
 
-                        
-                        <div className="md:hidden w-[280px] min-h-[200px] bg-white relative top-[250px] left-[55px] z-30
-                         rounded-lg text-center p-6 backdrop-filter backdrop-blur-sm bg-opacity-95 shadow-sm">
-                            <h1 className="text-3xl font-extralight tracking-tighter text-black/80 mb-2">{image.heading}</h1>
-                            <div className="flex items-center mb-2">
-                                <div className="flex-grow h-0.5  mr-3 line-center-left "></div>
-                                <img
-                                    src="/logoipsum2.svg"
-                                    alt='logo1'
-                                    className="w-4 h-4"
-                                />
-                                <div className="flex-grow h-0.5 ml-3 line-center-right"></div>
-                            </div>
-                            <p className="text-sm font-normal tracking-wide text-black mb-1">{image.para}</p>
-                            <button className="text-sm mt-2 px-4 py-1 border border-black rounded-full">KNOW MORE</button>
-                        </div>
 
-
+                  <>
+                  <ContentSlide imageid={image.id} imageheading={image.heading}/>         
+                  </>
+             
                     </div>
+                  
                 ))}
+
+                 
             </Carousel>
+
+            {/* {CarouselImages.map((image)=>(
+            <ContentSlide imageid={image.id} imagetext={image.para} imageheading={image.heading}/>         
+            ))} */}
+
+            <Info/>
         </div>
+        
+       
+
+        </>
     )
 }
 

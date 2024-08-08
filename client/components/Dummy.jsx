@@ -1,11 +1,9 @@
 import React from 'react'
 
-const Dummy = () => {
+const dummy = () => {
   return (
-    <div className='w-full h-screen bg-white'>
-          sdbd sdbjb cc
-    </div>
+    <div className='h-screen w- full'>dummy</div>
   )
 }
 
-export default Dummy
+export default dummy
