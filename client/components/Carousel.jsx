@@ -52,7 +52,7 @@ const carousel = () => {
                         ) : (
                             <div className="hidden md:block w-[300px] min-h-[180px] bg-white absolute top-[180px] right-20 z-20
                                  rounded-lg  text-center p-6 backdrop-filter backdrop-blur-xs bg-opacity-90">
-                                <h1 className="text-3xl font-extralight tracking-tighter text-black/80 mb-2">{image.heading}</h1>
+                                <h1 className="text-xl font-light tracking-tighter text-black/80 mb-2">{image.heading}</h1>
                                 <div className="flex items-center mb-2">
                                     <div className="flex-grow h-0.5  mr-3 line-center-left "></div>
                                     <img
