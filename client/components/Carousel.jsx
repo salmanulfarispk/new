@@ -1,8 +1,10 @@
+"use client"
 import { Carousel } from "flowbite-react"
 import Image from "next/image";
 import Info from "./Info";
 import ContentSlide from "./ContentSlide";
-
+import { IoIosSearch } from "react-icons/io";
+import { motion } from "framer-motion";
 
 
 
@@ -68,6 +70,31 @@ const carousel = () => {
 
                         )}
 
+                        <div className="hidden  md:flex w-3/4 h-[50px] rounded-lg bg-white absolute bottom-10 left-[150px] overflow-hidden">
+                             <div className="w-1/4 bg-secondary rounded-tl-lg rounded-bl-lg flex items-center justify-center">
+                                  <div className="w-fit p-3">
+                                  <IoIosSearch size={22} className="text-slate-500/95"/>
+                                  </div>
+                                  <div className="w-full overflow-hidden flex items-center">
+                                     <motion.span
+                                      className="whitespace-nowrap text-sm font-sans"
+                                      initial={{ x: "100%" }}
+                                      animate={{ x: "-100%" }}
+                                      transition={{ ease: "linear", duration: 10, repeat: Infinity }}
+                                     >Premium,Standard,Economy</motion.span>
+                                  </div>
+                             </div>
+                             <div className="w-1/2 h-[50px] bg-white">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                             </div>
+                             <div className="w-1/4 h-[50px] bg-white rounded-tr-lg rounded-br-lg">jcnsj</div>
+
+                        </div>
+
+
+
 
                   <>
                   <ContentSlide imageid={image.id} imageheading={image.heading} imagetext={image.para}/>         
@@ -79,10 +106,6 @@ const carousel = () => {
 
                  
             </Carousel>
-
-            {/* {CarouselImages.map((image)=>(
-            <ContentSlide imageid={image.id} imagetext={image.para} imageheading={image.heading}/>         
-            ))} */}
 
             <Info/>
         </div>

@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 const ContentSlide = ({imageid, imagetext, imageheading}) => {
     return (

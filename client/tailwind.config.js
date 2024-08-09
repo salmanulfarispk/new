@@ -13,6 +13,7 @@ module.exports = {
       colors:{
         graybg: "#5C5E60",
         primary: "#2F2F2F",
+        secondary: '#F4F4F4'
       }
     },
   },

@@ -35,7 +35,7 @@ const NavbarSec = () => {
 
 
     return (
-        <motion.div className={`flex items-center text-white justify-between p-3 ${isScrolled ? 'bg-slate-100 shadow-sm' : 'bg-slate-100 md:bg-transparent'}`}
+        <motion.div className={`flex items-center text-white justify-between p-3 ${isScrolled ? 'bg-secondary shadow-sm' : 'bg-secondary md:bg-transparent'}`}
            transition={{duration: 0.3 }}
         >
             <div className="flex space-x-7">
@@ -53,10 +53,8 @@ const NavbarSec = () => {
                 </Link>
 
                 <Link href="/booknow">
-                  <motion.button className="bg-graybg rounded-2xl px-2 md:px-4 text-white"
-                    initial={{scale:0}}
-                    whileInView={{scale:1}}
-                  >Book Now</motion.button>
+                  <button className="bg-graybg rounded-2xl px-2 md:px-4 text-white hover:scale-105 transition-transform duration-300 ease-in-out"
+                  >Book Now</button>
                 </Link>
 
             </div>
