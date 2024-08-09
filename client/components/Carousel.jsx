@@ -5,8 +5,12 @@ import Info from "./Info";
 import ContentSlide from "./ContentSlide";
 import { IoIosSearch } from "react-icons/io";
 import { motion } from "framer-motion";
-
-
+import moment from "moment"
+import { MdDateRange } from "react-icons/md";
+import { FaBed } from "react-icons/fa";
+import { FaPersonHalfDress } from "react-icons/fa6";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 
 const carousel = () => {
@@ -21,96 +25,121 @@ const carousel = () => {
     ];
 
 
+    const startDate = moment();
+    const endDate = moment().add(1, 'day');
+
+    const router=useRouter()
+
     return (
         <>
-        <div className="w-full h-[450px] sm:h-[500px] md:h-[550px]">
-            <Carousel slideInterval={5000}>
-                {CarouselImages.map((image) => (
-                    <div key={image.id} className="relative w-full h-full">
-                        <Image
-                            src={image.src}
-                            alt={image.alt}
-                            layout="fill"
-                            objectFit="cover"
-                            className="w-fit h-fit"
-                        />
+            <div className="w-full h-[450px] sm:h-[500px] md:h-[550px]">
+                <Carousel slideInterval={5000}>
+                    {CarouselImages.map((image) => (
+                        <div key={image.id} className="relative w-full h-full">
+                            <Image
+                                src={image.src}
+                                alt={image.alt}
+                                layout="fill"
+                                objectFit="cover"
+                                className="w-fit h-fit"
+                            />
 
-                        {image.id === 1 || image.id === 3 || image.id === 6 ? (
-                            <div className="hidden md:block w-[300px] min-h-[180px] bg-white absolute top-[180px] left-20 z-20
+                            {image.id === 1 || image.id === 3 || image.id === 6 ? (
+                                <div className="hidden md:block w-[300px] min-h-[180px] bg-white absolute top-[180px] left-20 z-20
                            rounded-lg  text-center p-6 backdrop-filter backdrop-blur-xs bg-opacity-90">
-                                <h1 className="text-xl font-light tracking-tighter text-black/80 mb-2">{image.heading}</h1>
-                                <div className="flex items-center mb-2">
-                                    <div className="flex-grow h-0.5  mr-3 line-center-left "></div>
-                                    <img
-                                        src="/logoipsum2.svg"
-                                        alt='logo1'
-                                        className="w-5 h-5"
-                                    />
-                                    <div className="flex-grow h-0.5 ml-3 line-center-right"></div>
+                                    <h1 className="text-xl font-light tracking-tighter text-black/80 mb-2">{image.heading}</h1>
+                                    <div className="flex items-center mb-2">
+                                        <div className="flex-grow h-0.5  mr-3 line-center-left "></div>
+                                        <img
+                                            src="/logoipsum2.svg"
+                                            alt='logo1'
+                                            className="w-5 h-5"
+                                        />
+                                        <div className="flex-grow h-0.5 ml-3 line-center-right"></div>
+                                    </div>
+                                    <p className="text-base font-normal tracking-wide text-black mb-1">{image.para}</p>
+                                    <button className="text-sm mt-2 px-4 py-1 border border-black rounded-full">KNOW MORE</button>
                                 </div>
-                                <p className="text-base font-normal tracking-wide text-black mb-1">{image.para}</p>
-                                <button className="text-sm mt-2 px-4 py-1 border border-black rounded-full">KNOW MORE</button>
-                            </div>
-                        ) : (
-                            <div className="hidden md:block w-[300px] min-h-[180px] bg-white absolute top-[180px] right-20 z-20
+                            ) : (
+                                <div className="hidden md:block w-[300px] min-h-[180px] bg-white absolute top-[180px] right-20 z-20
                                  rounded-lg  text-center p-6 backdrop-filter backdrop-blur-xs bg-opacity-90">
-                                <h1 className="text-xl font-light tracking-tighter text-black/80 mb-2">{image.heading}</h1>
-                                <div className="flex items-center mb-2">
-                                    <div className="flex-grow h-0.5  mr-3 line-center-left "></div>
-                                    <img
-                                        src="/logoipsum2.svg"
-                                        alt='logo1'
-                                        className="w-5 h-5"
-                                    />
-                                    <div className="flex-grow h-0.5 ml-3 line-center-right"></div>
+                                    <h1 className="text-xl font-light tracking-tighter text-black/80 mb-2">{image.heading}</h1>
+                                    <div className="flex items-center mb-2">
+                                        <div className="flex-grow h-0.5  mr-3 line-center-left "></div>
+                                        <img
+                                            src="/logoipsum2.svg"
+                                            alt='logo1'
+                                            className="w-5 h-5"
+                                        />
+                                        <div className="flex-grow h-0.5 ml-3 line-center-right"></div>
+                                    </div>
+                                    <p className="text-base font-normal tracking-wide text-black mb-1">{image.para}</p>
+                                    <button className="text-sm mt-2 px-4 py-1 border border-black rounded-full">KNOW MORE</button>
                                 </div>
-                                <p className="text-base font-normal tracking-wide text-black mb-1">{image.para}</p>
-                                <button className="text-sm mt-2 px-4 py-1 border border-black rounded-full">KNOW MORE</button>
+
+                            )}
+
+                              {/** booking bar*/}
+
+                            <div className="hidden  md:flex w-3/4 h-[50px] rounded-lg bg-white absolute 
+                                bottom-10 left-[150px] overflow-hidden" onClick={()=> router.push("/booknow")}>
+                                <div className="w-1/4 bg-secondary rounded-tl-lg rounded-bl-lg flex items-center justify-center">
+                                    <div className="w-fit p-3">
+                                        <IoIosSearch size={22} className="text-graybg" />
+                                    </div>
+                                    <div className="w-full overflow-hidden flex items-center">
+                                        <motion.span
+                                            className="whitespace-nowrap text-sm font-sans"
+                                            initial={{ x: "100%" }}
+                                            animate={{ x: "-100%" }}
+                                            transition={{ ease: "linear", duration: 10, repeat: Infinity }}
+                                        >Premium,Standard,Economy</motion.span>
+                                    </div>
+                                </div>
+
+                                <div className="w-1/2 bg-white flex items-center justify-between">
+                                    <span className="text-sm font-medium flex items-center ms-7">
+                                        <MdDateRange size={18} className="text-graybg mr-2" />
+                                        {`${startDate.format('MMM DD')} to ${endDate.format('MMM DD')}, 1N`}
+                                    </span>
+                                    <span className="text-sm font-medium flex items-center ms-5">
+                                        <FaBed size={18} className="text-graybg mr-2" />
+                                        1 Room
+                                    </span>
+                                    <span className="text-sm font-medium flex items-center">
+                                        <FaPersonHalfDress size={18} className="text-graybg mr-1" />
+                                        1 Adult,0 Child
+                                    </span>
+                                </div>
+
+                                <div className="w-1/4 bg-white rounded-tr-lg rounded-br-lg flex justify-end items-center p-4">
+                                    <Link href="/booknow">
+                                        <button className="bg-graybg text-md  font-medium rounded-2xl px-4 text-white hover:scale-105 transition-transform duration-300 ease-in-out">
+                                            Book Now
+                                        </button>
+                                    </Link>
+                                </div>
+
                             </div>
 
-                        )}
 
-                        <div className="hidden  md:flex w-3/4 h-[50px] rounded-lg bg-white absolute bottom-10 left-[150px] overflow-hidden">
-                             <div className="w-1/4 bg-secondary rounded-tl-lg rounded-bl-lg flex items-center justify-center">
-                                  <div className="w-fit p-3">
-                                  <IoIosSearch size={22} className="text-slate-500/95"/>
-                                  </div>
-                                  <div className="w-full overflow-hidden flex items-center">
-                                     <motion.span
-                                      className="whitespace-nowrap text-sm font-sans"
-                                      initial={{ x: "100%" }}
-                                      animate={{ x: "-100%" }}
-                                      transition={{ ease: "linear", duration: 10, repeat: Infinity }}
-                                     >Premium,Standard,Economy</motion.span>
-                                  </div>
-                             </div>
-                             <div className="w-1/2 h-[50px] bg-white">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                             </div>
-                             <div className="w-1/4 h-[50px] bg-white rounded-tr-lg rounded-br-lg">jcnsj</div>
+
+
+                            <>
+                                <ContentSlide imageid={image.id} imageheading={image.heading} imagetext={image.para} />
+                            </>
 
                         </div>
 
+                    ))}
 
 
+                </Carousel>
 
-                  <>
-                  <ContentSlide imageid={image.id} imageheading={image.heading} imagetext={image.para}/>         
-                  </>
-             
-                    </div>
-                  
-                ))}
+                <Info />
+            </div>
 
-                 
-            </Carousel>
 
-            <Info/>
-        </div>
-        
-       
 
         </>
     )
