@@ -20,8 +20,9 @@ const carousel = () => {
         { id: 2, src: "/r7.jpg", alt: "Image 2", heading: "Serene Reading Nook", para: "Find peace in our serene reading nooks, perfect for a good book and a cup of tea." },
         { id: 3, src: "/r8.jpg", alt: "Image 3", heading: "Elegant Dining Room", para: "Elegant dining rooms perfect for dinner parties and intimate meals." },
         { id: 4, src: "/r6.jpg", alt: "Image 4", heading: "Cozy Bedroom Retreat", para: "Relax in our cozy bedrooms, crafted for restful nights and serene mornings." },
-        { id: 5, src: "/r2.jpg", alt: "Image 5", heading: "Modern Pool Area", para: "Enjoy modern luxury with sleek pool designs and chic furnishings for stylish events." },
+        { id: 5, src: "/r9.jpg", alt: "Image 5", heading: "Premium Room", para: "Premium rooms for ultimate comfort and stylish entertaining." },
         { id: 6, src: "/r5.png", alt: "Image 6", heading: "Luxurious Living Room", para: "Luxurious living rooms for ultimate comfort and stylish entertaining." },
+
     ];
 
 

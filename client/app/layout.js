@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import MainNavbar from "@/components/MainNavbar";
 import MobileNav from "@/components/MobileNav";
+import Footer from "@/components/Footer";
 
 
 
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
         <MobileNav/>
         
         {children}
+        <Footer/>
         </body>
     </html>
   );
